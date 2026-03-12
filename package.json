@@ -1,6 +1,6 @@
 {
   "name": "validated-changeset-webforms",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "dist/validated-changeset-webforms.umd.js",
   "module": "dist/validated-changeset-webforms.es5.js",
   "types": "dist/index.d.ts",
