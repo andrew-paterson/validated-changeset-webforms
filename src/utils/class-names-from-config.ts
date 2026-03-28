@@ -47,6 +47,7 @@ function applyValidationClassNames(
     classNamesArray = classNamesArray.concat(
       (classNameSettings.invalidClassNames || []).map((item) => `!${item}`),
     );
+
     if (formField) {
       if (formField.showValidation) {
         if (formField.validationStatus === 'valid') {

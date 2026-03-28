@@ -25,6 +25,7 @@ export default async function onSubmit(
       );
     }
     changesetWebform.formSettings.requestInFlight = false;
+
     if (changesetWebform.formSettings.clearFormAfterSubmit) {
       changesetWebform.clear();
     }

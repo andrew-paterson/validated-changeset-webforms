@@ -34,9 +34,10 @@ export default class FormField extends FieldsBaseClass {
     previousLength?: number;
   } | null;
   cloneId?: number | null;
-  clonedFields?: FormFieldClone[] | null;
+  clonedFields?: FormFieldClone[] | null = [];
   cloneCountStatus?: 'min' | 'max' | null;
   dynamicIncludeExcludeConditions?: ChangesetWebformProps['dynamicIncludeExcludeConditions'];
+  eventLog: string[] = [];
   constructor(
     args,
     FormFieldCloneClass: typeof FormFieldClone = FormFieldClone,
@@ -280,9 +281,9 @@ export default class FormField extends FieldsBaseClass {
     clone.changesetWebform = this.changesetWebform;
     clone.masterFormField = this;
     this.clonedFields.push(clone);
+    clone.index = this.clonedFields.indexOf(clone);
     clone.fieldLabel = this._cloneFieldLabel(clone, this);
     clone.placeholder = this._clonePlaceholder(clone);
-    clone.index = this.clonedFields.indexOf(clone);
     const lastIndex = this.clonedFields.length - 1;
     this.lastUpdatedClone = {
       // Useful for something like swapping field values between clones.

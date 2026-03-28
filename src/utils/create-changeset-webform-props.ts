@@ -25,7 +25,7 @@ export default function createChangesetWebformProps(
       parsedFields,
       data,
       instance.formSchemaWithDefaults.validators,
-      modules.Changeset,
+      (modules || {}).Changeset,
     );
 
   const snapshots = [];

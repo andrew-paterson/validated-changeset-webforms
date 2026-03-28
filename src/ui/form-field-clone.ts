@@ -9,6 +9,8 @@ export default class FormFieldClone extends FieldsBaseClass {
   cloneActionsPosition?: FieldSchema['cloneActionsPosition'];
   // Runtime wiring (assigned by parser/create functions)
   cloneId?: number | null;
+  eventLog: string[] = [];
+
   constructor(args) {
     super();
     for (const key in args) {
