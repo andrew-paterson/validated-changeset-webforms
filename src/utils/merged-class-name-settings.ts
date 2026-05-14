@@ -1,4 +1,4 @@
-import _mergeWith from 'lodash.mergewith';
+import _mergeWith from './merge-with.js';
 
 import mergeWithArrayInheritanceCustomiser from './merge-with-array-inheritance-customiser.js';
 import ChangesetWebform from '../changeset-webform.js';

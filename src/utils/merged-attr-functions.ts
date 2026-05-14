@@ -1,4 +1,4 @@
-import _mergeWith from 'lodash.mergewith';
+import _mergeWith from './merge-with.js';
 
 import ChangesetWebform from '../changeset-webform';
 import FormField from '../ui/form-field';

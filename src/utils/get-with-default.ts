@@ -1,4 +1,4 @@
-import _mergeWith from 'lodash.mergewith';
+import _mergeWith from './merge-with.js';
 
 import mergeWithArrayInheritanceCustomiser from './merge-with-array-inheritance-customiser.js';
 import {
@@ -26,10 +26,11 @@ export default function getWithDefault(
   const formSettingsDefaults = defaults.map((item) => item.formSettings);
   const validatorsDefaults = defaults.map((item) => item.validators);
   const classNamesDefaults = defaults.map(
-    (item) => item.attrsFromConfig.classNames,
+    (item) => item.attrsFromConfig?.classNames,
   );
+  console.log('test');
   const attrFunctionsDefaults = defaults.map(
-    (item) => item.attrsFromConfig.attrFunctions,
+    (item) => item.attrsFromConfig?.attrFunctions,
   );
 
   const formSettings = _mergeWith(
@@ -58,7 +59,7 @@ export default function getWithDefault(
 
   const mergedFields = (formSchema.fields || []).map((field) => {
     const fieldTypeDefaults = defaults.map((item) => {
-      return item.fieldTypes.find(
+      return item.fieldTypes?.find(
         (itemFieldType) => itemFieldType.fieldType === field.fieldType,
       );
     });
