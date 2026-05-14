@@ -1,4 +1,4 @@
-import { unflatten } from 'flat';
+import unflatten from './unflatten.js';
 
 import clonedValidator from '../validators/cloned.js';
 import uniqueCloneValidator from '../validators/unique-clone.js';

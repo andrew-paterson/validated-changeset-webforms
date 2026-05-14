@@ -1,6 +1,6 @@
 {
   "name": "validated-changeset-webforms",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "dist/validated-changeset-webforms.umd.js",
   "module": "dist/validated-changeset-webforms.es5.js",
   "types": "dist/index.d.ts",
@@ -18,7 +18,6 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.26.0",
-    "flat": "^5.0.2",
     "validated-changeset": "~1.4.1"
   },
   "devDependencies": {

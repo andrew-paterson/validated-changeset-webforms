@@ -28,7 +28,6 @@ export default function getWithDefault(
   const classNamesDefaults = defaults.map(
     (item) => item.attrsFromConfig?.classNames,
   );
-  console.log('test');
   const attrFunctionsDefaults = defaults.map(
     (item) => item.attrsFromConfig?.attrFunctions,
   );
