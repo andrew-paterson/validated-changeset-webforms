@@ -1,9 +1,19 @@
 {
   "name": "validated-changeset-webforms",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "dist/validated-changeset-webforms.umd.js",
   "module": "dist/validated-changeset-webforms.es5.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/validated-changeset-webforms.es5.js",
+      "require": "./dist/validated-changeset-webforms.umd.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./types": {
+      "types": "./dist/types.d.ts"
+    }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup --config",
