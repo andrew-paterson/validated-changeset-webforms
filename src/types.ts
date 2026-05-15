@@ -1,10 +1,12 @@
 import { Changeset } from 'validated-changeset';
 
-import ChangesetWebformClass from './changeset-webform.js';
+import type ChangesetWebform from './changeset-webform.js';
 import type FormField from './ui/form-field.js';
 import type FormFieldClone from './ui/form-field-clone.js';
 
-export type ChangesetWebform = InstanceType<typeof ChangesetWebformClass>;
+export type ChangesetWebformInstance = InstanceType<typeof ChangesetWebform>;
+export type FormFieldInstance = InstanceType<typeof FormField>;
+export type FormFieldCloneInstance = InstanceType<typeof FormFieldClone>;
 
 export type ChangesetWebformProps = {
   formSchemaWithDefaults: any;
@@ -178,58 +180,58 @@ export type ValidationResult =
 
 export type CwfCallbacks = {
   afterValidateFields?: (
-    changesetWebform: InstanceType<typeof ChangesetWebformClass>,
+    changesetWebform: InstanceType<typeof ChangesetWebform>,
     validationResult: any,
   ) => Promise<void> | void;
   formValidationPassed?: (
-    changesetWebform: InstanceType<typeof ChangesetWebformClass>,
+    changesetWebform: InstanceType<typeof ChangesetWebform>,
   ) => Promise<void> | void;
   formValidationFailed?: (
-    changesetWebform: InstanceType<typeof ChangesetWebformClass>,
+    changesetWebform: InstanceType<typeof ChangesetWebform>,
   ) => Promise<void> | void;
   afterFieldValidation?: (
     formField: InstanceType<typeof FormField>,
-    changesetWebform: InstanceType<typeof ChangesetWebformClass>,
+    changesetWebform: InstanceType<typeof ChangesetWebform>,
     validationResult: any,
   ) => Promise<void> | void;
   onFieldValueChange?: (
     formField: InstanceType<typeof FormField>,
-    changesetWebform: InstanceType<typeof ChangesetWebformClass>,
+    changesetWebform: InstanceType<typeof ChangesetWebform>,
   ) => void;
   beforeClearForm?: (
-    changesetWebform: InstanceType<typeof ChangesetWebformClass>,
+    changesetWebform: InstanceType<typeof ChangesetWebform>,
   ) => void;
   afterClearForm?: (
-    changesetWebform: InstanceType<typeof ChangesetWebformClass>,
+    changesetWebform: InstanceType<typeof ChangesetWebform>,
   ) => void;
   beforeResetForm?: (
-    changesetWebform: InstanceType<typeof ChangesetWebformClass>,
+    changesetWebform: InstanceType<typeof ChangesetWebform>,
   ) => void;
   afterResetForm?: (
-    changesetWebform: InstanceType<typeof ChangesetWebformClass>,
+    changesetWebform: InstanceType<typeof ChangesetWebform>,
   ) => void;
   beforeSubmitForm?: (
-    changesetWebform: InstanceType<typeof ChangesetWebformClass>,
+    changesetWebform: InstanceType<typeof ChangesetWebform>,
   ) => Promise<void> | void;
   submitData?: (
     data: any,
-    changesetWebform: InstanceType<typeof ChangesetWebformClass>,
+    changesetWebform: InstanceType<typeof ChangesetWebform>,
   ) => Promise<any> | any;
   submitSuccess?: (
     response: any,
-    changesetWebform: InstanceType<typeof ChangesetWebformClass>,
+    changesetWebform: InstanceType<typeof ChangesetWebform>,
   ) => void;
   submitError?: (
     error: any,
-    changesetWebform: InstanceType<typeof ChangesetWebformClass>,
+    changesetWebform: InstanceType<typeof ChangesetWebform>,
   ) => void;
   submitComplete?: (
     status: 'success' | 'error',
     responseOrError: any,
-    changesetWebform: InstanceType<typeof ChangesetWebformClass>,
+    changesetWebform: InstanceType<typeof ChangesetWebform>,
   ) => void;
 };
 
 export type OnSubmit = (
-  changesetWebform: InstanceType<typeof ChangesetWebformClass>,
+  changesetWebform: InstanceType<typeof ChangesetWebform>,
 ) => any;
